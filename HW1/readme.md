@@ -1,3 +1,5 @@
+## Note 只能在本地端執行，如果要執行，請輸入 streamlit run 程式名稱
+
 # CRISP-DM Framework Analysis
 
 ## 1. Business Understanding
