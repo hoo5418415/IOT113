@@ -11,8 +11,12 @@
       
       5.Make predictions on the test data, calculate the Mean Squared Error (MSE) using the predicted values, and print the MSE.
 
+ 生出第一版(homework2.py)
 
-2.I want CRISP-DM steps show following markDown Language,so I can use github readme.md to show the step
+2.great ,also can you write the comments follow the CRISP-DM Steps,and output the data using mark-down format
+(生出第二版homework2_詳細註解.py)
+
+3.I want CRISP-DM steps show following markDown Language,so I can use github readme.md to show the step
 
 
 
