@@ -1,3 +1,14 @@
+# **ChatGpt Prompt **
+
+1.請根據上傳的csv檔，使用auto regression，根據Date與Price進行model evaluation 
+做完評估後，輸出預測漏斗圖，以x軸為Date,y軸為Price,以預測未來三個月個價格
+
+
+2.can you generate the python code about how to predict the value?
+
+3.please generate the markdown format so I can upload to github as read.me document
+
+---
 # **CRISP-DM Framework Analysis**
 
 ## 1. Business Understanding
@@ -41,21 +52,22 @@ Predict the future prices of a certain asset (e.g., stock, commodity) based on h
        gregorian_year = roc_year + 1911
        return datetime(gregorian_year, month, day)
 	```
-2.**Indexing: **
-The Date column was set as the index to enable time series analysis:
-```python
-   data.set_index('Date', inplace=True)
-	```
+2. **Indexing:**
+  The Date column was set as the index to enable time series analysis:
+  ```python
+     data.set_index('Date', inplace=True)
+  ```
 
-3. **Split Data: **
-The data was split into training and testing sets:
+3. **Split Data:**
+  The data was split into training and testing sets:
 
-Training Set: All data except the last 30 days.
-Test Set: The last 30 days of data.
+  Training Set: All data except the last 30 days.
+  Test Set: The last 30 days of data.
 
 4. **Auto Regressive (AR) Model:**
-An AR model with a lag of 5 days was fitted to the training data.
+  An AR model with a lag of 5 days was fitted to the training data.
 
+---
 
 ## 4.Modeling
 **Chosen Model:**
@@ -67,12 +79,16 @@ The AR model was trained on historical Price data using 5 lags, meaning that eac
 **Model Evaluation:**
 The model was evaluated using the Root Mean Squared Error (RMSE) metric, yielding an RMSE of approximately 9.71, which represents the average error between predicted and actual prices in the test set.
 
+---
+
 ## 5.Evaluation
 **Model Performance:**
 The RMSE of 9.71 indicates that on average, the model’s predictions deviate by around 9.71 units from the actual values.
 
 **Visual Validation:**
 A visual comparison of actual prices vs. predicted prices for the next three months was plotted. The model follows the general trend of price movement but may need further tuning to reduce error.
+
+---
 
 ## 6. Deployment
 
@@ -83,10 +99,13 @@ The AR model was used to forecast prices for the next 90 business days (3 months
 Continue monitoring the model’s predictions against actual values as new data becomes available.
 Explore more advanced models like ARIMA or SARIMA to potentially improve forecast accuracy.
 
-##7. Conclusion
+---
+
+## 7. Conclusion
 The current AR model provides a reasonable forecast with an acceptable level of error (RMSE = 9.71), but further refinement could enhance accuracy.
 
 This model can serve as a foundation for more sophisticated predictive modeling, including incorporating external variables or moving to more complex time series models.
 
 
+![image](https://github.com/user-attachments/assets/0ecff37f-2e7a-4eee-ae73-23ba5837ceec)
 
