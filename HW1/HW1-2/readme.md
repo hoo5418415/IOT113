@@ -1,3 +1,7 @@
+# 使用鴻海(2317) 112~113/10/16 股價，來預測未來三個月價格
+
+
+
 # **ChatGpt Prompt **
 
 1.請根據上傳的csv檔，使用auto regression，根據Date與Price進行model evaluation 
