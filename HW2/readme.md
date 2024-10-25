@@ -1,4 +1,4 @@
-# 使用本地端執行(因colab沒有optuna
+# 使用本地端執行(因colab沒有optuna)
 
 # Titanic Classification: A CRISP-DM Approach
 
@@ -54,3 +54,6 @@ The final model and feature selection were chosen based on the best validation a
 ### 6. Deployment
 
 To generate predictions on the test set, we used the final optimized model with the best parameters found by `Optuna`. We saved the predictions in `submission.csv`, including `PassengerId` and `Survived` status for each test passenger, in a format compatible with Kaggle’s Titanic competition submission guidelines.
+
+
+![image](https://github.com/user-attachments/assets/59b6d6e7-7fb5-4b99-aafb-4f8fc2a8ae67)
