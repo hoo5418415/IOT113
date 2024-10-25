@@ -1,5 +1,12 @@
 # 使用本地端執行(因colab沒有optuna)
 
+
+# chatgpt prompt
+1.write python to solve Titanic classification problems follow crisp data mining
+2.can you change model use random forest and use SelectKBest, optuna to select best features
+3.I need the test set passenger ID to submission.csv(因為第二步生成的code預測ID是錯的)
+4.please write a detail introduction about each step following the crisp data mining，and output the  mark down language format so I can upload github as a readme file
+
 # Titanic Classification: A CRISP-DM Approach
 
 This repository applies the **CRISP-DM (Cross-Industry Standard Process for Data Mining)** methodology to solve the Titanic survival classification problem using Python. The objective is to predict the survival outcome of passengers based on features such as age, sex, class, and other socio-economic factors. We use `RandomForestClassifier`, feature selection (`SelectKBest`), and hyperparameter optimization with `Optuna` to achieve a robust model.
