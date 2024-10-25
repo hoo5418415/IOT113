@@ -2,10 +2,10 @@
 
 
 # chatgpt prompt
-1.write python to solve Titanic classification problems follow crisp data mining
-2.can you change model use random forest and use SelectKBest, optuna to select best features
-3.I need the test set passenger ID to submission.csv(因為第二步生成的code預測ID是錯的)
-4.please write a detail introduction about each step following the crisp data mining，and output the  mark down language format so I can upload github as a readme file
+### 1.write python to solve Titanic classification problems follow crisp data mining
+### 2.can you change model use random forest and use SelectKBest, optuna to select best features
+### 3.I need the test set passenger ID to submission.csv(因為第二步生成的code預測ID是錯的)
+### 4.please write a detail introduction about each step following the crisp data mining，and output the  mark down language format so I can upload github as a readme file
 
 # Titanic Classification: A CRISP-DM Approach
 
