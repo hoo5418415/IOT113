@@ -1,5 +1,6 @@
 # 請下載執行，並輸入 streamlit run 3-2.py 
 
+![image](https://github.com/user-attachments/assets/b367ea4e-fdb2-4f81-a18e-9beb74894581)
 
 ---
 #chatgpt prompt
