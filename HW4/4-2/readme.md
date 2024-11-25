@@ -2,191 +2,124 @@
 ---
 #chatgpt prompt
 I want to use kaggle Titanic - Machine Learning from Disaster ，and use Hyperparameter Optimization to optimise the problem
-
-
-#Titanic - Machine Learning from Disaster 🚢
-This project is a solution to the Kaggle competition Titanic - Machine Learning from Disaster. The goal is to predict whether a passenger survived the Titanic disaster based on their characteristics using machine learning. This repository follows the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology to ensure a systematic and structured approach.
-
-CRISP-DM Methodology 🛠️
 ---
-1. Business Understanding
-Objective: Predict the survival of Titanic passengers (binary classification: Survived = 1 or 0).
-Impact: Understanding the factors affecting survival can provide insights into safety procedures and disaster management.
-Dataset: The dataset consists of the following:
-train.csv: Training data (contains Survived label).
-test.csv: Test data (used for prediction and submission).
-Dataset Link
----
-2. Data Understanding
-We first explore the dataset to understand its structure and characteristics.
 
-Columns:
+# Titanic - Machine Learning from Disaster 🚢
 
-Survived: Target variable (1 = survived, 0 = did not survive).
-Pclass: Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd).
-Sex: Gender of the passenger.
-Age: Age of the passenger.
-SibSp: Number of siblings/spouses aboard.
-Parch: Number of parents/children aboard.
-Fare: Ticket fare.
-Embarked: Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton).
-Other features such as Cabin and Name were reviewed for possible importance.
-Initial Observations:
-
-Missing values in Age, Cabin, and Embarked.
-Categorical columns (Sex, Embarked) need encoding.
-Exploratory Data Analysis (EDA):
-
-Visualizations (bar charts, histograms) were used to analyze feature relationships with survival rates.
----
-3. Data Preparation
-Steps:
-
-Handle Missing Values:
-
-Age: Imputed with the median.
-Embarked: Imputed with the mode.
-Cabin: Dropped due to a large number of missing values.
-Feature Engineering:
-
-Created FamilySize = SibSp + Parch + 1 to represent family grouping.
-Extracted Title from Name to capture social status.
-Binned Fare and Age into categorical ranges to capture non-linearity.
-Encoding Categorical Variables:
-
-One-hot encoded Sex and Embarked.
-Scaling Numeric Features:
-
-Used StandardScaler to scale numeric columns (Age, Fare).
-Final Split:
-
-Split the train.csv into training and validation sets using an 80:20 ratio.
----
-4. Modeling
-Multiple machine learning algorithms were tested, and hyperparameter optimization was used to fine-tune their performance.
+This project is a solution to the Kaggle competition **Titanic - Machine Learning from Disaster**. The goal is to predict whether a passenger survived the Titanic disaster based on their characteristics using machine learning. This repository follows the **CRISP-DM (Cross-Industry Standard Process for Data Mining)** methodology to ensure a systematic and structured approach.
 
 ---
-5. Evaluation
-The model was evaluated using the validation set, with the following metrics:
 
-Accuracy
-Confusion Matrix
-Precision, Recall, F1-Score
+## CRISP-DM Methodology 🛠️
 
+### 1. **Business Understanding**
+- **Objective:** Predict the survival of Titanic passengers (binary classification: `Survived` = 1 or 0).
+- **Impact:** Understanding the factors affecting survival can provide insights into safety procedures and disaster management.
+- **Dataset:** The dataset consists of:
+  - `train.csv`: Training data (contains `Survived` label).
+  - `test.csv`: Test data (used for prediction and submission).
+  - [Dataset Link](https://www.kaggle.com/competitions/titanic/data)
 
-Here is the introduction to solving the Kaggle Titanic - Machine Learning from Disaster problem using CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology. The content is formatted in Markdown, so you can directly use it as a README.md file for your GitHub repository.
-
-Titanic - Machine Learning from Disaster 🚢
-This project is a solution to the Kaggle competition Titanic - Machine Learning from Disaster. The goal is to predict whether a passenger survived the Titanic disaster based on their characteristics using machine learning. This repository follows the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology to ensure a systematic and structured approach.
-
-CRISP-DM Methodology 🛠️
-1. Business Understanding
-Objective: Predict the survival of Titanic passengers (binary classification: Survived = 1 or 0).
-Impact: Understanding the factors affecting survival can provide insights into safety procedures and disaster management.
-Dataset: The dataset consists of the following:
-train.csv: Training data (contains Survived label).
-test.csv: Test data (used for prediction and submission).
-Dataset Link
-2. Data Understanding
-We first explore the dataset to understand its structure and characteristics.
-
-Columns:
-
-Survived: Target variable (1 = survived, 0 = did not survive).
-Pclass: Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd).
-Sex: Gender of the passenger.
-Age: Age of the passenger.
-SibSp: Number of siblings/spouses aboard.
-Parch: Number of parents/children aboard.
-Fare: Ticket fare.
-Embarked: Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton).
-Other features such as Cabin and Name were reviewed for possible importance.
-Initial Observations:
-
-Missing values in Age, Cabin, and Embarked.
-Categorical columns (Sex, Embarked) need encoding.
-Exploratory Data Analysis (EDA):
-
-Visualizations (bar charts, histograms) were used to analyze feature relationships with survival rates.
-3. Data Preparation
-Steps:
-
-Handle Missing Values:
-
-Age: Imputed with the median.
-Embarked: Imputed with the mode.
-Cabin: Dropped due to a large number of missing values.
-Feature Engineering:
-
-Created FamilySize = SibSp + Parch + 1 to represent family grouping.
-Extracted Title from Name to capture social status.
-Binned Fare and Age into categorical ranges to capture non-linearity.
-Encoding Categorical Variables:
-
-One-hot encoded Sex and Embarked.
-Scaling Numeric Features:
-
-Used StandardScaler to scale numeric columns (Age, Fare).
-Final Split:
-
-Split the train.csv into training and validation sets using an 80:20 ratio.
-4. Modeling
-Multiple machine learning algorithms were tested, and hyperparameter optimization was used to fine-tune their performance.
-
-Algorithms Tested:
-Logistic Regression
-Random Forest
-Gradient Boosting (XGBoost, LightGBM, CatBoost)
-Hyperparameter Optimization:
-Used Optuna for Bayesian Optimization to maximize accuracy through hyperparameter tuning.
-Example of hyperparameter optimization for Random Forest:
-
-python
-複製程式碼
-import optuna
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score
-
-def objective(trial):
-    n_estimators = trial.suggest_int("n_estimators", 50, 500)
-    max_depth = trial.suggest_int("max_depth", 3, 20)
-    min_samples_split = trial.suggest_int("min_samples_split", 2, 20)
-    min_samples_leaf = trial.suggest_int("min_samples_leaf", 1, 10)
-    max_features = trial.suggest_categorical("max_features", ["auto", "sqrt", "log2"])
-
-    model = RandomForestClassifier(
-        n_estimators=n_estimators,
-        max_depth=max_depth,
-        min_samples_split=min_samples_split,
-        min_samples_leaf=min_samples_leaf,
-        max_features=max_features,
-        random_state=42,
-    )
-
-    scores = cross_val_score(model, X_train, y_train, cv=5, scoring="accuracy")
-    return scores.mean()
-
-study = optuna.create_study(direction="maximize")
-study.optimize(objective, n_trials=50)
-
-print("Best hyperparameters:", study.best_params)
-Selected Model:
-Random Forest with the best hyperparameters after optimization:
-n_estimators: 200
-max_depth: 12
-min_samples_split: 5
-min_samples_leaf: 2
-max_features: "sqrt"
-5. Evaluation
-The model was evaluated using the validation set
 ---
-6. Deployment
-The model was used to predict survival on the test dataset.
+
+### 2. **Data Understanding**
+Exploratory data analysis (EDA) was performed to understand the dataset’s structure, characteristics, and relationships between variables.
+
+- **Features Overview:**
+  - `Survived`: Target variable (1 = survived, 0 = did not survive).
+  - `Pclass`: Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd).
+  - `Sex`: Gender of the passenger.
+  - `Age`: Age of the passenger.
+  - `SibSp`: Number of siblings/spouses aboard.
+  - `Parch`: Number of parents/children aboard.
+  - `Fare`: Ticket fare.
+  - `Embarked`: Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton).
+
+- **Initial Observations:**
+  - Missing values in `Age`, `Cabin`, and `Embarked`.
+  - Categorical variables (`Sex`, `Embarked`) require encoding.
+
+- **Key Insights from EDA:**
+  - Gender (`Sex`) is a strong predictor of survival, with females having a higher survival rate.
+  - Ticket class (`Pclass`) significantly affects survival, with passengers in 1st class having the highest survival rate.
+  - Family-related features like `SibSp` and `Parch` show relationships with survival when combined into a new feature `FamilySize`.
+
 ---
-Results 📊
-Model Performance:
-Validation Accuracy: ~83%
-Kaggle Leaderboard Score: ~0.78 (Varies depending on randomness and tuning)
-Key Insights:
-Sex and Pclass are the most important features.
-Traveling with family improves survival chances.
+
+### 3. **Data Preparation**
+Steps taken to preprocess the data for machine learning:
+
+1. **Handling Missing Values:**
+   - Imputed missing values in `Age` using the median.
+   - Filled missing values in `Embarked` with the mode.
+   - Dropped the `Cabin` column due to a high percentage of missing data.
+
+2. **Feature Engineering:**
+   - Created a `FamilySize` feature by combining `SibSp` and `Parch`.
+   - Extracted `Title` from the passenger's name to capture social status.
+   - Binned continuous features like `Age` and `Fare` into categorical ranges to address non-linearity.
+
+3. **Encoding Categorical Variables:**
+   - Converted categorical variables (`Sex`, `Embarked`, `Title`) into numerical values using one-hot encoding.
+
+4. **Scaling Numeric Features:**
+   - Scaled numeric columns such as `Age` and `Fare` to standardize the data.
+
+5. **Data Splitting:**
+   - Split the dataset into training and validation subsets using an 80:20 ratio to evaluate model performance.
+
+---
+
+### 4. **Modeling**
+Various machine learning models were tested to predict survival. The primary focus was on binary classification models:
+
+- Models Tested:
+  - Logistic Regression
+  - Random Forest
+  - Gradient Boosting Models (XGBoost, LightGBM, CatBoost)
+
+- **Model Selection:**
+  - Random Forest was chosen as the final model after hyperparameter tuning.
+  - Key hyperparameters (e.g., number of trees, max depth, min samples split) were optimized using **Optuna**, a hyperparameter optimization library.
+
+---
+
+### 5. **Evaluation**
+The selected model was evaluated using the validation dataset:
+
+- **Metrics:**
+  - Accuracy
+  - Precision, Recall, and F1-Score
+  - Confusion Matrix
+
+- **Performance:**
+  - Validation Accuracy: **~83%**
+  - Kaggle Leaderboard Score: **~0.78**
+
+- **Insights:**
+  - Gender (`Sex`) and ticket class (`Pclass`) were the most important features influencing survival.
+  - FamilySize and Title features also provided additional predictive power.
+
+---
+
+### 6. **Deployment**
+The final model was applied to the test dataset to generate predictions for Kaggle submission:
+
+- **Submission File:**
+  - The submission file contains two columns: `PassengerId` and `Survived`.
+  - Predictions were uploaded to the Kaggle platform, achieving a leaderboard score of approximately 0.78.
+
+---
+
+## Results 📊
+
+- **Model Performance:**
+  - Validation Accuracy: **~83%**
+  - Kaggle Leaderboard Score: **~0.78**
+
+- **Key Takeaways:**
+  - Females (Sex = female) had a higher likelihood of survival.
+  - Passengers in 1st class (Pclass = 1) had significantly better survival rates.
+  - Traveling in larger family groups had mixed effects, with optimal survival rates for moderate family sizes.
+
+---
