@@ -38,3 +38,9 @@ The trained model can be saved and used to classify new samples of iris flowers.
 
 ## Conclusion
 This project demonstrates the application of the CRISP-DM methodology to solve a classification problem using PyTorch. The workflow includes understanding the business objective, preparing the data, defining and training the model, and evaluating its performance. TensorBoard is used to monitor the training process, making it easier to visualize and understand model improvements over time.
+
+![image](https://github.com/user-attachments/assets/26d6c595-fd5a-45aa-b19d-328f7220848f)
+
+![image](https://github.com/user-attachments/assets/5ee42aa8-0dcb-4fe4-b5e8-99542665c533)
+
+
