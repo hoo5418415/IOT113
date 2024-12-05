@@ -1,3 +1,7 @@
+#chatgpt Prompt
+
+Summarize the process of applying the CRISP-DM methodology to classify iris flowers using PyTorch. Include steps like data understanding, preparation, modeling, and evaluation, and provide an overview of the tools and techniques used, such as TensorBoard for logging results.
+
 # CRISP-DM Steps for Iris Classification Using PyTorch
 
 ## 1. Business Understanding
