@@ -107,3 +107,9 @@ This will allow you to monitor the loss and accuracy during training and help yo
 
 ### Summary
 This project follows the CRISP-DM process to build a neural network model for Iris flower classification. TensorBoard is used to visualize the training metrics, providing valuable insights into the model's performance during the training phase.
+
+
+![image](https://github.com/user-attachments/assets/84b76907-40ce-4ff1-82e9-3fbc973c734a)
+
+![image](https://github.com/user-attachments/assets/94824b82-713b-48ec-b650-df3db0af6dd7)
+
