@@ -45,3 +45,7 @@ For deployment, the trained model can be saved and used to make predictions on n
 
 ### Summary
 This project demonstrates the end-to-end process of data mining using the CRISP-DM methodology to classify iris flowers using a neural network built with PyTorch Lightning. The process involves understanding the problem, preparing the data, modeling, evaluation, and potential deployment.
+
+![image](https://github.com/user-attachments/assets/fa24c53f-edec-4b6f-8a7f-80ef6ae966f1)
+![image](https://github.com/user-attachments/assets/d379f9f7-5c1e-4132-901c-f935c2345960)
+
