@@ -1,6 +1,6 @@
-# Iris Classification with PyTorch Lightning
+# Iris Classification with tensorflow.Keras/pytorch/pytorch lighting
 
-This repository provides a PyTorch Lightning implementation for classifying iris flowers into three species based on their features. The project follows the CRISP-DM methodology and leverages PyTorch Lightning for model training, validation, and testing.
+This repository provides a tensorflow.Keras/pytorch/pytorch lighting implementation for classifying iris flowers into three species based on their features. The project follows the CRISP-DM methodology and leverages tensorflow.Keras/pytorch/pytorch lighting for model training, validation, and testing.
 
 ## Project Workflow (CRISP-DM Steps)
 
